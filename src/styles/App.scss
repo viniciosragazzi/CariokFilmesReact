@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --colorOne: #09090f;
+  --colorRed: #cb4c4c;
+  --colorBlue: #5d7aaf;
+  --colorBlue2: #5c6d8d;
+  --colorGray: #7676801f;
+  --colorGray2: #62627cbe;
+  --colorGray3: #51535e;
+  --colorGrayShadow: #58589b7a;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(31deg, var(--colorOne), #1a1d28);
+  .container {
+    padding: 3rem 4rem;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .title {
+    font-size: 3.6rem;
+    color: var(--colorBlue);
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  h4.titleSection {
+    color: white;
+    font-size: max(1.6rem, 2vw);
+    font-weight: 500;
+
+    &.filterTitle {
+      font-size: 1.6rem;
+    }
+  }
+
+  //Home
+
+  .home {
+    header {
+      &:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.1;
+        background-image: url("https://cdn.discordapp.com/attachments/771766413563002920/987180156047228998/bg.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-size: cover;
+      }
+      .container {
+        display: grid;
+        gap: 2rem;
+        padding: 3rem 3rem;
+        justify-items: center;
+
+        .head {
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          color: white;
+          line-height: 2.8rem;
+          text-align: center;
+          .titleArea {
+            .title {
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              svg {
+                font-size: 2.6rem;
+              }
+            }
+          }
+        }
+        .headerInput {
+          padding: 0 1.4rem;
+          width: 100%;
+          max-width: 48rem;
+          height: 4.6rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--colorGray);
+          backdrop-filter: blur(20px);
+          border-radius: 1.1rem;
+          border: 1px solid var(--colorBlue2);
+          .diviser {
+            width: 2px;
+            height: 60%;
+            background-color: var(--colorGray);
+          }
+          svg {
+            color: var(--colorBlue2);
+            font-size: 2.4rem;
+
+            &.micIcon {
+              color: var(--colorGray2);
+              font-size: 2.6rem;
+              margin: 0 0.5rem;
+            }
+          }
+          input {
+            width: 100%;
+            background: none;
+            border: none;
+            height: 50%;
+            padding-left: 1rem;
+            box-shadow: none;
+            outline: none;
+            color: var(--colorGray2);
+            font-weight: 500;
+
+            &:focus {
+            }
+          }
+        }
+        .headerFilters {
+          padding: 1.5rem 0;
+          gap: 1.5rem;
+
+          .boxFilters {
+            gap: 2rem;
+            width: 100%;
+
+            .filter {
+              align-items: center;
+              justify-items: center;
+              color: #d0d0d7ba;
+              cursor: pointer;
+              &:hover {
+                .logoFilter {
+                  box-shadow: var(--colorGrayShadow) 0px 7px 29px 0px;
+                }
+              }
+              .logoFilter {
+                width: 4rem;
+                height: 4rem;
+                background-color: var(--colorGray2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0.6rem;
+                margin-bottom: 0.4rem;
+                transition: 0.5s box-shadow;
+                svg {
+                  color: white;
+                  font-size: 2.4rem;
+                }
+              }
+              p {
+                font-size: 1.1rem;
+                transition: 0.5s transform;
+              }
+            }
+          }
+        }
+      }
+    }
+    section.content {
+      .sectionFilms {
+        .container {
+          padding: 3rem 2rem;
+        }
+        .filmsList {
+          padding-bottom: 4rem;
+          position: relative;
+          .imgFilme {
+            border-radius: 1.4rem;
+            width: max(110px, 12vw);
+            overflow: hidden;
+            img {
+              width: 100%;
+            }
+          }
+          .notaFilme {
+            color: whitesmoke;
+            position: absolute;
+            width: 2.6rem;
+            height: 2.6rem;
+            background-color: var(--colorOne);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 1rem;
+            margin: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 374px) {
+  .swiper {
+    .swiper-slide {
+      transition: 0.5s transform;
+    }
+    .swiper-slide-active {
+      transform: scale(0.8);
+      margin-right: 15px;
+    }
+    .swiper-slide-next {
+      margin-right: 16px !important;
+      transform: scale(1);
+    }
+
+    .swiper-slide-next + .swiper-slide {
+      transform: scale(0.8);
+    }
+  }
+}
